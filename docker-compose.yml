@@ -11,7 +11,7 @@ services:
       - "9000:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/docker/volumes:/var/lib/docker/volumes
+      - portainer_data:/data
 
   plex:
     container_name: Plex
@@ -81,3 +81,5 @@ services:
       - NET_ADMIN
       - CAP_NET_BIND_SERVICE
       - CAP_NET_RAW
+volumes:
+  portainer_data:
