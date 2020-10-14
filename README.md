@@ -9,7 +9,9 @@ List of containers on the file *docker-compose*
 - Taitulli
 - Ombi
 
-> ``docker-compose up -d`` 
+```
+docker-compose up -d
+```
 
 List of containers on the file *docker-compose.full*
 
@@ -22,6 +24,8 @@ List of containers on the file *docker-compose.full*
 - Telegraf
 - InfluxDB
 
-> docker-compose -f docker-compose.full.yml -p Media up -d
+```
+docker-compose -f docker-compose.full.yml -p Media up -d
+```
 
 #### **NOTE:** *REMEMBER TO RUN THE COMPOSE FILE AS ROOT*
