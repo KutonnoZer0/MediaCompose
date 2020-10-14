@@ -58,6 +58,15 @@ services:
     volumes:
       - /home/Data/Config/OMBI:/config
 
+  bitwarden:
+    container_name: BitWarden
+    image: bitwardenrs/server-postgresql:1.17.0
+    restart: unless-stopped
+    ports: 
+      - 8083:80
+    volumes: 
+      - /home/Data/Config/.BitWarden:/data
+
   pihole:
     container_name: PiHole
     image: pihole/pihole:dev-stretch
