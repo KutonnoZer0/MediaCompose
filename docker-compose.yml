@@ -64,8 +64,11 @@ services:
     restart: unless-stopped
     ports: 
       - 8083:80
+    environment:
+      - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
     volumes: 
       - /home/Data/Config/.BitWarden:/data
 
+# After finish adding the users is recommended to disable the option for adding more user also is recommendable to disable the admin token.
 volumes:
   portainer_data:
