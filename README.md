@@ -1,6 +1,6 @@
 # Media Compose
 
-List of containers on the file *docker-compose*
+List of containers on the file **docker-compose**
 
 - Portainer
 - PiHole
@@ -13,7 +13,7 @@ List of containers on the file *docker-compose*
 docker-compose up -d
 ```
 
-List of containers on the file *docker-compose.full*
+List of containers on the file **docker-compose.full**
 
 - Portainer
 - Bitwarden
