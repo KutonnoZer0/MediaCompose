@@ -58,4 +58,22 @@ services:
     volumes:
       - /home/Data/Config/OMBI:/config
 
-  
+  pihole:
+    container_name: PiHole
+    image: pihole/pihole:dev-stretch
+    restart: unless-stopped
+    ports: 
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment: 
+      TZ: 'America/Chicago'
+      WEBPASSWORD: "changeme"
+    volumes: 
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    cap_add:
+      - NET_ADMIN
+    DNS1: '1.1.1.1'
