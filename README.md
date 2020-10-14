@@ -2,12 +2,12 @@
 
 List of containers on the file **docker-compose**
 
-- Portainer
-- PiHole
-- Bitwarden
-- Plex
-- Taitulli
-- Ombi
+- [Portainer](https://www.portainer.io/)
+- [PiHole](https://pi-hole.net/)
+- [Bitwarden](https://bitwarden.com/)
+- [Plex](https://www.plex.tv/)
+- [Taitulli](https://tautulli.com/)
+- [Ombi](https://ombi.io/)
 
 ```
 docker-compose up -d
@@ -15,14 +15,14 @@ docker-compose up -d
 
 List of containers on the file **docker-compose.full**
 
-- Portainer
-- Bitwarden
-- Plex
-- Taitulli
-- Ombi
-- Grafana
-- Telegraf
-- InfluxDB
+- [Portainer](https://www.portainer.io/)
+- [Bitwarden](https://bitwarden.com/)
+- [Plex](https://www.plex.tv/)
+- [Taitulli](https://tautulli.com/)
+- [Ombi](https://ombi.io/)
+- [Grafana](https://grafana.com/)
+- [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)
+- [InfluxDB](https://www.influxdata.com/)
 
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
