@@ -57,7 +57,7 @@ docker-compose -f docker-compose.full.pihole.yml -p Media up -d
 | Plex  | 32400 | 32400 |
 | Taitulli | 8181 | 8181 |
 | Ombi | 3579 | 3579 |
-| Grafana  | 3000 | 300 |
+| Grafana  | 3000 | 3000 |
 | InfluxDB | 8086 | 8086 |  
 -------------------
 
