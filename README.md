@@ -35,7 +35,7 @@ List of containers on the file **[docker-compose.full](https://raw.githubusercon
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
 ```
-List of containers on the file **[docker-compose.full](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.pihole.yml)**
+List of containers on the file **[docker-compose.full.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.pihole.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
