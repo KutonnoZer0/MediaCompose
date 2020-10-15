@@ -1,6 +1,6 @@
 # Media Compose
 
-List of containers on the file **docker-compose**
+List of containers on the file **[docker-compose](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -12,7 +12,7 @@ List of containers on the file **docker-compose**
 docker-compose up -d
 ```
 
-List of containers on the file **docker-compose.pihole**
+List of containers on the file **[docker-compose.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.pihole.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -23,7 +23,7 @@ List of containers on the file **docker-compose.pihole**
 ```
 docker-compose -f docker-compose.pihole.yml -p Media up -d
 ```
-List of containers on the file **docker-compose.full**
+List of containers on the file **[docker-compose.full](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -35,7 +35,7 @@ List of containers on the file **docker-compose.full**
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
 ```
-List of containers on the file **docker-compose.full**
+List of containers on the file **[docker-compose.full](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.pihole.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
