@@ -12,8 +12,7 @@ List of containers on the file **docker-compose**
 docker-compose up -d
 ```
 
-
-List of containers on the file **docker-compose.full**
+List of containers on the file **docker-compose.pihole**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -24,12 +23,37 @@ List of containers on the file **docker-compose.full**
 ```
 docker-compose -f docker-compose.pihole.yml -p Media up -d
 ```
+List of containers on the file **docker-compose.full**
+
+- [Portainer](https://www.portainer.io/)
+- [Bitwarden](https://bitwarden.com/)
+- [Plex](https://www.plex.tv/)
+- [Taitulli](https://tautulli.com/)
+- [Ombi](https://ombi.io/)
+- [InfluxDB](https://www.influxdata.com/)
+- [Grafana](https://grafana.com/)
+```
+docker-compose -f docker-compose.full.yml -p Media up -d
+```
+List of containers on the file **docker-compose.full**
+
+- [Portainer](https://www.portainer.io/)
+- [Bitwarden](https://bitwarden.com/)
+- [Plex](https://www.plex.tv/)
+- [Taitulli](https://tautulli.com/)
+- [Ombi](https://ombi.io/)
+- [PiHole](https://pi-hole.net/)
+- [InfluxDB](https://www.influxdata.com/)
+- [Grafana](https://grafana.com/)
+```
+docker-compose -f docker-compose.full.pihole.yml -p Media up -d
+```
 
 # Ports Layout
 | Container | Local Port | Container Port |
 | --------- | :----------: | :--------------: |
-| Portainer   | 9000 | 9000 |
-| Bitwarden  | 8083 | 80 |   
+| Portainer | 9000 | 9000 |
+| Bitwarden | 8083 | 80 |   
 | Plex  | 32400 | 32400 |
 | Taitulli | 8181 | 8181 |
 | Ombi | 3579 | 3579 |
@@ -51,4 +75,14 @@ And for Pi hole will be
 <your-ip>/admin
 ```
 
-### **NOTE:** *REMEMBER TO RUN THE COMPOSE FILE AS ROOT*
+## **NOTE:** 
+
+Bitwarden
+
+```
+ Is high recommended that you generate a random token by typing openssl rand -base64 48 on the terminal and add the token on the "ADMIN_TOKEN=" flag.
+
+ After finish adding the users is recommended to disable the option for adding more user also is recommendable to disable the admin token.
+```
+
+### *REMEMBER TO RUN THE COMPOSE FILE AS ROOT*
