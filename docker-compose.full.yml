@@ -74,7 +74,7 @@ services:
     container_name: Grafana
     image: grafana/grafana:7.2.1
     restart: unless-stopped
-    port:
+    ports:
       - "3000:3000"
     environment:
       - GF_AUTH_DISABLE_LOGIN_FORM=true
