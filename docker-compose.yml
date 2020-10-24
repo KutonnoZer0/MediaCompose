@@ -43,7 +43,7 @@ services:
     volumes:
       - /home/Data/Config/Tautulli:/config
       - /home/Data/Config/Plex/Library/Application Support/Plex Media Server/Logs/:/logs
-  
+
   ombi:
     container_name: OMBI
     image: linuxserver/ombi:version-v4.0.530
@@ -57,16 +57,16 @@ services:
     #  - TZ=america/new_york
     volumes:
       - /home/Data/Config/OMBI:/config
-      
+
   bitwarden:
     container_name: BitWarden
     image: bitwardenrs/server-postgresql:1.17.0
     restart: unless-stopped
-    ports: 
+    ports:
       - 8083:80
     environment:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
-    volumes: 
+    volumes:
       - bitwarden_data:/data
 
 volumes:

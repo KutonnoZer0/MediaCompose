@@ -77,6 +77,13 @@ And for Pi hole will be
 
 ## **NOTE:** 
 
+Folder Location
+
+```
+The compose file use /home/Data/ as a main directory.
+```
+
+
 Bitwarden
 
 ```
