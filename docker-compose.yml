@@ -60,7 +60,7 @@ services:
 
   bitwarden:
     container_name: BitWarden
-    image: bitwardenrs/server-postgresql:1.17.0
+    image: bitwardenrs/server:1.17.0
     restart: unless-stopped
     ports:
       - 8083:80
