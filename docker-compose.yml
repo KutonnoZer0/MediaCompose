@@ -66,8 +66,10 @@ services:
       - 8083:80
     environment:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
+      - ROCKET_TLS='{certs="/ssl/certs.pem",key="/ssl/key.pem"}'
     volumes:
       - bitwarden_data:/data
+      - /ssl/keys/:/ssl/
 
 volumes:
   portainer_data:
