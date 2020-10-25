@@ -7,7 +7,7 @@ List of containers on the file **[docker-compose](https://raw.githubusercontent.
 - [Plex](https://www.plex.tv/)
 - [Taitulli](https://tautulli.com/)
 - [Ombi](https://ombi.io/)
-- [NGINX](https://www.nginx.com/products/)
+- [SWAG](https://github.com/linuxserver/docker-swag)
 
 ```
 docker-compose up -d
@@ -21,7 +21,7 @@ List of containers on the file **[docker-compose.pihole](https://raw.githubuserc
 - [Taitulli](https://tautulli.com/)
 - [Ombi](https://ombi.io/)
 - [PiHole](https://pi-hole.net/)
-- [NGINX](https://www.nginx.com/products/)
+- [SWAG](https://github.com/linuxserver/docker-swag)
 ```
 docker-compose -f docker-compose.pihole.yml -p Media up -d
 ```
@@ -34,7 +34,7 @@ List of containers on the file **[docker-compose.full](https://raw.githubusercon
 - [Ombi](https://ombi.io/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Grafana](https://grafana.com/)
-- [NGINX](https://www.nginx.com/products/)
+- [SWAG](https://github.com/linuxserver/docker-swag)
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
 ```
@@ -48,7 +48,7 @@ List of containers on the file **[docker-compose.full.pihole](https://raw.github
 - [PiHole](https://pi-hole.net/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Grafana](https://grafana.com/)
-- [NGINX](https://www.nginx.com/products/)
+- [SWAG](https://github.com/linuxserver/docker-swag)
 ```
 docker-compose -f docker-compose.full.pihole.yml -p Media up -d
 ```
