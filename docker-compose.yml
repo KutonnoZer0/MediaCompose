@@ -63,7 +63,8 @@ services:
     image: bitwardenrs/server:1.17.0
     restart: unless-stopped
     ports:
-      - 8083:80
+      #- 8083:80
+      - 8083:443
     environment:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
       - ROCKET_TLS='{certs="/ssl/certs.pem",key="/ssl/key.pem"}'
