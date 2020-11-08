@@ -2,23 +2,39 @@
 # 10/20/2020
 
 version: "3.8"
-
 services:
+  agent:
+    image: portainer/agent:2.0.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - agent_network
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
+
   portainer:
-    container_name: Portainer
     image: portainer/portainer-ce:2.0.0
-    restart: unless-stopped
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
     ports:
       - "9000:9000"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    networks:
+      - agent_network
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
 
   plex:
-    container_name: Plex
+    #container_name: Plex
     image: linuxserver/plex:version-1.20.2.3402-0fec14d92
-    restart: unless-stopped
-    network_mode: "host"
+    ##restart: unless-stopped
+    #network_mode: "host"
     environment:
       - PUID=1000
       - PGID=1000
@@ -28,13 +44,16 @@ services:
       - /home/Data/Config/Plex:/config
       - /home/Data/Storage/Tv:/tv
       - /home/Data/Storage/Movies:/movies
+    ports:
+      - 32400:32400/tcp
+    deploy:
+      mode: replicated
+      replicas: 1
 
   tautulli:
-    container_name: Tautulli
+    #container_name: Tautulli
     image: linuxserver/tautulli:7b936fd6-ls1
-    restart: unless-stopped
-    ports:
-      - "8181:8181"
+    #restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -44,13 +63,18 @@ services:
     volumes:
       - /home/Data/Config/Tautulli:/config
       - /home/Data/Config/Plex/Library/Application Support/Plex Media Server/Logs/:/logs
+    ports:
+      - 8181:8181
+    deploy:
+      mode: replicated
+      replicas: 1
 
   ombi:
-    container_name: OMBI
+    #container_name: OMBI
     image: linuxserver/ombi:version-v4.0.530
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
-      - "3579:3579"
+      - 3579:3579
     environment:
       - PUID=1000
       - PGID=1000
@@ -58,11 +82,14 @@ services:
     #  - TZ=america/new_york
     volumes:
       - /home/Data/Config/OMBI:/config
+    deploy:
+      mode: replicated
+      replicas: 1
 
   swag:
-    container_name: SWAG
+    #container_name: SWAG
     image: linuxserver/swag:version-1.9.0
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
       #- 8081:80
       - 4343:443
@@ -83,11 +110,14 @@ services:
       #- MAXMINDDB_LICENSE_KEY= #optional
     volumes:
       - /home/Data/Config/Nginx:/config
+    deploy:
+      mode: replicated
+      replicas: 0
 
   bitwarden:
-    container_name: BitWarden
+    #container_name: BitWarden
     image: bitwardenrs/server:1.17.0
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
       - 8083:80
       #- 8083:443
@@ -96,6 +126,14 @@ services:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
     volumes:
       - bitwarden_data:/data
+    deploy:
+      mode: replicated
+      replicas: 0
+
+networks:
+  agent_network:
+    driver: overlay
+    attachable: true
 
 volumes:
   portainer_data:
