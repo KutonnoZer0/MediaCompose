@@ -21,7 +21,7 @@ show_menu() {
     printf " Please select a Exporters"
     printf "\n ${menu}*********************************************${normal}\n"
     printf "   ${number} 1)${menu} Server Configuration ${normal}\n"
-    printf "   ${number} 2)${menu} Install Samba ${normal}\n
+    printf "   ${number} 2)${menu} Install Samba ${normal}\n"
     printf " ${menu}*********************************************${normal}\n"
     printf " Please enter a menu option and enter ${fgred}(or x to exit)${normal}: "
     read opt </dev/tty
