@@ -202,9 +202,9 @@ while [ ! -z $opt ]; do
 
             sources_update
             package_install
-            user_verification
             folders_creation
             docker_install
+            user_verification
             testing
 
             clear
