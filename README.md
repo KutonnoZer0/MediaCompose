@@ -1,13 +1,26 @@
-# Media Compose
+# Home Serve
+
+For click start run the follow commands
+
+```
+apt install -y git
+git clone https://github.com/KutonnoZer0/MediaCompose.git
+./start.sh
+```
+OR
+
+```
+curl -sSL  | bash
+```
+
+## Media Compose
 
 List of containers on the file **[docker-compose](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.yml)**
 
 - [Portainer](https://www.portainer.io/)
-- [Bitwarden](https://bitwarden.com/)
 - [Plex](https://www.plex.tv/)
 - [Taitulli](https://tautulli.com/)
 - [Ombi](https://ombi.io/)
-- [SWAG](https://github.com/linuxserver/docker-swag)
 
 ```
 docker-compose up -d
@@ -20,8 +33,9 @@ List of containers on the file **[docker-compose.pihole](https://raw.githubuserc
 - [Plex](https://www.plex.tv/)
 - [Taitulli](https://tautulli.com/)
 - [Ombi](https://ombi.io/)
+- [NextCloud](https://nextcloud.com/)
 - [PiHole](https://pi-hole.net/)
-- [SWAG](https://github.com/linuxserver/docker-swag)
+- [WireGuard](https://www.wireguard.com/)
 ```
 docker-compose -f docker-compose.pihole.yml -p Media up -d
 ```
@@ -48,7 +62,8 @@ List of containers on the file **[docker-compose.full.pihole](https://raw.github
 - [PiHole](https://pi-hole.net/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Grafana](https://grafana.com/)
-- [SWAG](https://github.com/linuxserver/docker-swag)
+- [NextCloud](https://nextcloud.com/)
+- [WireGuard](https://www.wireguard.com/)
 ```
 docker-compose -f docker-compose.full.pihole.yml -p Media up -d
 ```
@@ -61,9 +76,10 @@ docker-compose -f docker-compose.full.pihole.yml -p Media up -d
 | Plex  | 32400 | 32400 |
 | Taitulli | 8181 | 8181 |
 | Ombi | 3579 | 3579 |
+| NextCloud | 4443 | 443 |
 | Grafana  | 3000 | 3000 |
 | InfluxDB | 8086 | 8086 | 
-| SWAG | 4343 | 443 |
+| WireGuard | 51820 | 51820 |
 -------------------
 
 

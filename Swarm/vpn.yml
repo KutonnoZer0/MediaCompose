@@ -1,0 +1,27 @@
+# Programer: Pineapple
+# 11/11/2020
+
+version: "3.8"
+services:
+  wireguard:
+    image: linuxserver/wireguard:version-v1.0.20200827
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=america/chicago
+      - PEERS=1 #optional
+      - PEERDNS=auto #optional
+      - SERVERPORT=51820 #optional
+    LAUNCH_CAP_ADD:
+      - NET_ADMIN
+
+    volumes:
+      - /home/Data/Config/WireGuard:/config
+      - /lib/modules:/lib/moduless
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    deploy:
+      mode: replicated
+      replicas: 1

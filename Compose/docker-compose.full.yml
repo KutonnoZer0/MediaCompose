@@ -58,6 +58,20 @@ services:
     volumes:
       - /home/Data/Config/OMBI:/config
 
+  nextcloud:
+    container_name: NextCloud
+    image: linuxserver/nextcloud:version-20.0.1
+    restart: unless-stopped
+    ports:
+      - 4443:443/tcp
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=america/chicago
+    volumes:
+      - /home/Data/Config/NextCloud:/config
+      - /home/Data/Storage:/Storage
+
   bitwarden:
     container_name: BitWarden
     image: bitwardenrs/server-postgresql:1.17.0

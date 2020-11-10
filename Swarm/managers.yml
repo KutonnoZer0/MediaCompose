@@ -19,7 +19,7 @@ services:
     image: portainer/portainer-ce:2.0.0
     command: -H tcp://tasks.agent:9001 --tlsskipverify
     ports:
-      - "9000:9000"
+      - 9000:9000
     volumes:
       - portainer_data:/data
     networks:
@@ -29,29 +29,6 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == manager]
-
-  wireguard:
-    image: linuxserver/wireguard:version-v1.0.20200827
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=america/chicago
-      - PEERS=1 #optional
-      - PEERDNS=auto #optional
-      - SERVERPORT=51820 #optional
-    LAUNCH_CAP_ADD:
-      - NET_ADMIN
-      - SYS_MODULE
-    volumes:
-      - /home/Data/Config/WireGuard:/config
-      - /lib/modules:/lib/moduless
-    ports:
-      - 51820:51820/udp
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
-    deploy:
-      mode: replicated
-      replicas: 1
 
   jenkins:
     image: jenkins/jenkins:2.249.3-lts-alpine
