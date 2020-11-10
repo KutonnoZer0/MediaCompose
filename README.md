@@ -5,18 +5,8 @@ For quick start run the follow commands
 ```
 apt install -y git
 git clone https://github.com/KutonnoZer0/MediaCompose.git
-./setup.sh
-```
-OR
-
-```
-apt install -y curl
-curl -sSL https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/setup.sh | bash
-```
-OR
-
-```
-wget -qO- https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/setup.sh | sh 
+cd MediaCompose
+sh setup.sh
 ```
 
 ## Media Compose
