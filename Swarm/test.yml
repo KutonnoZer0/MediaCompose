@@ -9,7 +9,7 @@ services:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
       - WEBSOCKET_ENABLED=true
       - SIGNUPS_ALLOWED=true
-      - ROCKET_TLS='{certs="/ssl/certs.pem",key="/ssl/key.pem"}'
+      #- ROCKET_TLS='{certs="/ssl/certs.pem",key="/ssl/key.pem"}'
     volumes:
       #- /home/Data/Config/.BitWarden:/data
       - /home/Data/Config/Bitwarden:/data
