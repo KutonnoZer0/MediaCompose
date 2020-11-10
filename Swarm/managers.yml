@@ -40,7 +40,7 @@ services:
       - PEERDNS=auto #optional
       - SERVERPORT=51820 #optional
     volumes:
-      - /home/Data/Config/Wireguard:/config
+      - /home/Data/Config/WireGuard:/config
       - /lib/modules:/lib/moduless
     cap_add:
       - NET_ADMIN
