@@ -31,7 +31,7 @@ services:
         constraints: [node.role == manager]
 
   jenkins:
-    image: jenkins:2.249.3-lts-alpine
+    image: jenkins/jenkins:2.249.3-lts-alpine
     volumes:
       - jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
