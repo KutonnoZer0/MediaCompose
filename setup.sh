@@ -55,7 +55,7 @@ EOF
 
 package_install() {
 
-    packages='sudo curl nfs-kernel-server nfs-common cifs-utils cockpit cockpit-networkmanager cockpit-packagekit tree' # List of packages
+    packages='sudo curl nfs-kernel-server nfs-common cifs-utils cockpit cockpit-networkmanager cockpit-packagekit tree libffi-dev libssl-dev python3 python3-pip' # List of packages
 
     for p in ${packages}; do
         apt install -y ${packages}
@@ -93,8 +93,6 @@ docker_install() {
 
     curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
     service docker enable
-    apt install -y libffi-dev libssl-dev
-    apt install -y python3 python3-pip
     pip3 install docker-compose
 }
 
