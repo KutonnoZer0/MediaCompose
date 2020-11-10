@@ -30,6 +30,8 @@ services:
       placement:
         constraints: [node.role == manager]
 
+# Need to add Jenkis
+
 networks:
   agent_network:
     driver: overlay
