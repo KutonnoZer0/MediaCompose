@@ -39,12 +39,12 @@ services:
       - PEERS=1 #optional
       - PEERDNS=auto #optional
       - SERVERPORT=51820 #optional
+    LAUNCH_CAP_ADD:
+      - NET_ADMIN
+      - SYS_MODULE
     volumes:
       - /home/Data/Config/WireGuard:/config
       - /lib/modules:/lib/moduless
-    cap-add-add:
-      - NET_ADMIN
-      - SYS_MODULE
     ports:
       - 51820:51820/udp
     sysctls:
