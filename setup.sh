@@ -93,6 +93,9 @@ docker_install() {
 
     curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
     service docker enable
+}
+
+docker_compose() {
     pip3 install docker-compose
 }
 
@@ -202,6 +205,7 @@ while [ ! -z $opt ]; do
             package_install
             folders_creation
             docker_install
+            docker_compose
             user_verification
             testing
 
