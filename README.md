@@ -1,4 +1,4 @@
-# Home Serve
+# Home Server
 
 For quick start run the follow commands
 
@@ -10,7 +10,7 @@ git clone https://github.com/KutonnoZer0/MediaCompose.git
 OR
 
 ```
-curl -sSL  | bash
+curl -sSL https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/setup.sh | bash
 ```
 
 ## Media Compose
@@ -48,7 +48,6 @@ List of containers on the file **[docker-compose.full](https://raw.githubusercon
 - [Ombi](https://ombi.io/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Grafana](https://grafana.com/)
-- [SWAG](https://github.com/linuxserver/docker-swag)
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
 ```
