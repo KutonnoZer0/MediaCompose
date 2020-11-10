@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  bitwarden:
+    image: bitwardenrs/server:1.17.0
+    ports:
+      - 8083:80
+    environment:
+      #- DOMAIN='https://yourdomain.server.local/'
+      - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
+      - WEBSOCKET_ENABLED=true
+    volumes:
+      - /home/Data/Config/.BitWarden:/data
+    deploy:
+      mode: replicated
+      replicas: 1

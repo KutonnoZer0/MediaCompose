@@ -43,7 +43,7 @@ services:
     volumes:
       - /home/Data/Config/Tautulli:/config
       - /home/Data/Config/Plex/Library/Application Support/Plex Media Server/Logs/:/logs
-  
+
   ombi:
     container_name: OMBI
     image: linuxserver/ombi:version-v4.0.530
@@ -57,19 +57,19 @@ services:
     #  - TZ=america/new_york
     volumes:
       - /home/Data/Config/OMBI:/config
-      
+
   bitwarden:
     container_name: BitWarden
     image: bitwardenrs/server-postgresql:1.17.0
     restart: unless-stopped
-    ports: 
+    ports:
       - "8083:80"
     environment:
       - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
-    volumes: 
+    volumes:
       #- /home/Data/Config/.BitWarden:/data
       - bitwarden_data:/data
-  
+
   grafana:
     container_name: Grafana
     image: grafana/grafana:7.2.1
@@ -82,7 +82,7 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
     volumes:
       - grafana_data:/var/lib/grafana
-  
+
   influxdb:
     container_name: InfluxDB
     image: influxdb:1.8.3
@@ -96,4 +96,4 @@ volumes:
   bitwarden_data:
   grafana_data:
   influxdb_data:
-  portainer_data:  
+  portainer_data:
