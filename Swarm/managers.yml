@@ -38,6 +38,7 @@ services:
       - TZ=america/chicago
       - PEERS=1 #optional
       - PEERDNS=auto #optional
+      - SERVERPORT=51820 #optional
     volumes:
       - /home/Data/Config/Wireguard:/config
       - /lib/modules:/lib/moduless
