@@ -22,6 +22,7 @@ show_menu() {
     printf "\n ${menu}*********************************************${normal}\n"
     printf "   ${number} 1)${menu} Server Configuration ${normal}\n"
     printf "   ${number} 2)${menu} Install Samba ${normal}\n"
+    printf "   ${number} 3)${menu} Download Media Compose Repo${normal}\n"
     printf " ${menu}*********************************************${normal}\n"
     printf " Please enter a menu option and enter ${fgred}(or x to exit)${normal}: "
     read opt </dev/tty
@@ -218,6 +219,10 @@ while [ ! -z $opt ]; do
 
             clear
             show_menu
+            ;;
+        3)
+            cd /home/Data/Config
+            git clone https://github.com/KutonnoZer0/MediaCompose.git
             ;;
         x)
             exit
