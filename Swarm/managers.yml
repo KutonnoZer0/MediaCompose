@@ -42,9 +42,6 @@ services:
     volumes:
       - /home/Data/Config/WireGuard:/config
       - /lib/modules:/lib/moduless
-    cap_add:
-      - NET_ADMIN
-      - SYS_MODULE
     ports:
       - 51820:51820/udp
     sysctls:
