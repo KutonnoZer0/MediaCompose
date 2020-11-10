@@ -10,12 +10,18 @@ git clone https://github.com/KutonnoZer0/MediaCompose.git
 OR
 
 ```
+apt install -y curl
 curl -sSL https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/setup.sh | bash
+```
+OR
+
+```
+wget -qO- https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/setup.sh | sh 
 ```
 
 ## Media Compose
 
-List of containers on the file **[docker-compose](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.yml)**
+List of containers on the file **[docker-compose](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/Compose/docker-compose.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Plex](https://www.plex.tv/)
@@ -26,7 +32,7 @@ List of containers on the file **[docker-compose](https://raw.githubusercontent.
 docker-compose up -d
 ```
 
-List of containers on the file **[docker-compose.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.pihole.yml)**
+List of containers on the file **[docker-compose.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/Compose/docker-compose.pihole.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -39,7 +45,7 @@ List of containers on the file **[docker-compose.pihole](https://raw.githubuserc
 ```
 docker-compose -f docker-compose.pihole.yml -p Media up -d
 ```
-List of containers on the file **[docker-compose.full](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.yml)**
+List of containers on the file **[docker-compose.full](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/Compose/docker-compose.full.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
@@ -51,7 +57,7 @@ List of containers on the file **[docker-compose.full](https://raw.githubusercon
 ```
 docker-compose -f docker-compose.full.yml -p Media up -d
 ```
-List of containers on the file **[docker-compose.full.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/docker-compose.full.pihole.yml)**
+List of containers on the file **[docker-compose.full.pihole](https://raw.githubusercontent.com/KutonnoZer0/MediaCompose/main/Compose/docker-compose.full.pihole.yml)**
 
 - [Portainer](https://www.portainer.io/)
 - [Bitwarden](https://bitwarden.com/)
