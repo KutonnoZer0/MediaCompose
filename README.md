@@ -1,11 +1,11 @@
 # Home Serve
 
-For click start run the follow commands
+For quick start run the follow commands
 
 ```
 apt install -y git
 git clone https://github.com/KutonnoZer0/MediaCompose.git
-./start.sh
+./setup.sh
 ```
 OR
 
