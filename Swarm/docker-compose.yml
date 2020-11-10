@@ -1,5 +1,5 @@
 # Programer: Pineapple
-# 10/20/2020
+# 11/11/2020
 
 version: "3.8"
 services:
@@ -112,7 +112,7 @@ services:
       - /home/Data/Config/Nginx:/config
     deploy:
       mode: replicated
-      replicas: 0
+      replicas: 1
 
   bitwarden:
     #container_name: BitWarden
@@ -128,7 +128,7 @@ services:
       - bitwarden_data:/data
     deploy:
       mode: replicated
-      replicas: 0
+      replicas: 1
 
 networks:
   agent_network:
