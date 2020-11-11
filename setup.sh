@@ -104,6 +104,8 @@ docker_compose() {
 
 user_verification() {
 
+    read -p 'Please enter a User Name: ' USERNAME
+    read -p 'Please enter a Group Name: ' GROUPNAME
     #usermod -aG docker ${USERNAME}
 
     if [ $(getent passwd ${USERNAME}) ]; then
