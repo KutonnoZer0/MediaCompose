@@ -22,7 +22,10 @@ show_menu() {
     printf "\n ${menu}*********************************************${normal}\n"
     printf "   ${number} 1)${menu} Server Configuration ${normal}\n"
     printf "   ${number} 2)${menu} Install Samba ${normal}\n"
-    printf "   ${number} 3)${menu} Download Media Compose Repo${normal}\n"
+    printf "   ${number} 3)${menu} Docker Install${normal}\n"
+    printf "   ${number} 4)${menu} Docker Compose Install${normal}\n"
+    printf "   ${number} 5)${menu} Setting Verification${normal}\n"
+    printf "   ${number} 6)${menu} Move Media Compose to Data${normal}\n"
     printf " ${menu}*********************************************${normal}\n"
     printf " Please enter a menu option and enter ${fgred}(or x to exit)${normal}: "
     read opt </dev/tty
@@ -204,10 +207,6 @@ while [ ! -z $opt ]; do
             sources_update
             package_install
             folders_creation
-            docker_install
-            docker_compose
-            user_verification
-            testing
 
             clear
             show_menu
@@ -223,8 +222,48 @@ while [ ! -z $opt ]; do
             show_menu
             ;;
         3)
+            clear
+            option_picked "Installing Docker"
+            printf "${menu}*********************************************${normal};\n\n"
+
+            docker_install
+
+            clear
+            show_menu
+            ;;
+
+        4)
+            clear
+            option_picked "Installing Docker-Compose"
+            printf "${menu}*********************************************${normal};\n\n"
+
+            docker_compose
+
+            clear
+            show_menu
+            ;;
+
+        5)
+            clear
+            option_picked "Setting Verification"
+            printf "${menu}*********************************************${normal};\n\n"
+
+            user_verification
+            testing
+
+            clear
+            show_menu
+            ;;
+
+        6)
+            clear
+            option_picked "Moving Compose to Data"
+            printf "${menu}*********************************************${normal};\n\n"
             cd /home/Data/Config
             git clone https://github.com/KutonnoZer0/MediaCompose.git
+
+            clear
+            show_menu
             ;;
         x)
             exit
