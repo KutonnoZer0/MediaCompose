@@ -75,6 +75,7 @@ docker-compose -f docker-compose.full.pihole.yml -p Media up -d
 | Grafana  | 3000 | 3000 |
 | InfluxDB | 8086 | 8086 | 
 | WireGuard | 51820 | 51820 |
+| Cockpit | 9090 | 9090 |
 -------------------
 
 
