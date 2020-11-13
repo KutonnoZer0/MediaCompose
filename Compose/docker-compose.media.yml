@@ -1,0 +1,101 @@
+# Programer: Pineapple
+# 11/12/2020
+
+version: "3.8"
+services:
+  plex:
+    container_name: Plex
+    image: linuxserver/plex:version-1.20.2.3402-0fec14d92
+    restart: unless-stopped
+    network_mode: "host"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - TZ=america/chicago
+    volumes:
+      - /home/Data/Config/Plex:/config
+      - /home/Data/Storage/Tv:/tv
+      - /home/Data/Storage/Movies:/movies
+
+  tautulli:
+    container_name: Tautulli
+    image: linuxserver/tautulli:7b936fd6-ls1
+    restart: unless-stopped
+    ports:
+      - "8181:8181"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=latest
+      - TZ=america/chicago
+    #  - TZ=america/new_york
+    volumes:
+      - /home/Data/Config/Tautulli:/config
+      - /home/Data/Config/Plex/Library/Application Support/Plex Media Server/Logs/:/logs
+
+  ombi:
+    container_name: OMBI
+    image: linuxserver/ombi:version-v4.0.530
+    restart: unless-stopped
+    ports:
+      - "3579:3579"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=america/chicago
+    #  - TZ=america/new_york
+    volumes:
+      - /home/Data/Config/OMBI:/config
+
+  nextcloud:
+    container_name: NextCloud
+    image: linuxserver/nextcloud:version-20.0.1
+    restart: unless-stopped
+    ports:
+      - 4443:443/tcp
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=america/chicago
+    volumes:
+      - /home/Data/Config/NextCloud:/config
+      - /home/Data/Storage:/Storage
+
+  bitwarden:
+    container_name: BitWarden
+    image: bitwardenrs/server-postgresql:1.17.0
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    environment:
+      - ADMIN_TOKEN=random_token # High recommended that you generate a random token by typing openssl rand -base64 48 on the terminal
+    volumes:
+      #- /home/Data/Config/.BitWarden:/data
+      - bitwarden_data:/data
+
+  wireguard:
+    container_name: WireGuard
+    image: linuxserver/wireguard:version-v1.0.20200827
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=america/chicago
+      #- TZ=america/new_york
+      - SERVERPORT=51820 #optional
+      - PEERS=1 #optional
+      - PEERDNS=auto #optional
+    volumes:
+      - /home/Data/Config/WireGuard:/config
+      - /lib/modules:/lib/modules
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+
+volumes:
+  bitwarden_data:
